@@ -60,6 +60,11 @@ inner join asignatura a on am.id_alumno = a.id
 inner join curso_escolar c on am.id_curso_escolar = c.id where c.anyo_fin = 2018 group by 1, 2, 3;
 
 -- 11. Calcula el promedio de créditos de las asignaturas por grado.
+
+select avg(a.creditos) as promedio from asignatura a 
+inner join grado g on a.id_grado = g.id
+group by g.id;
+
 -- 12. Lista las cinco asignaturas más largas (en horas) impartidas en el último semestre.
 -- 13. Muestra los alumnos que han cursado más asignaturas de un género específico.
 -- 14. Calcula la cantidad total de horas cursadas por cada alumno en el último semestre.
